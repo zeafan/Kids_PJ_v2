@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="soora_size_name">22sp</dimen>
+    <dimen name="height_back_soora_show">80sp</dimen>
+    <dimen name="width_back_soora_show">120sp</dimen>
+    <dimen name="width_name_soora_show">130dp</dimen>
+    <dimen name="height_name_soora_show">80dp</dimen>
+    <dimen name="height_num_soora_show">60sp</dimen>
+    <dimen name="width_num_soora_show">60sp</dimen>
+    <dimen name="width_eye_soora_show">50sp</dimen>
+    <dimen name="height_eye_soora_show">50dp</dimen>
+</resources>

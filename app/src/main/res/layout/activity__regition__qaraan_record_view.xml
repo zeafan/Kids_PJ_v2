@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layer_id_relotion_qaraan_list_record"
+    android:layout_margin="10dp"
+    android:background="@drawable/main_background"
+
+    >
+
+        <ImageView
+            android:id="@+id/close_record_list"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            app:srcCompat="@drawable/btn_close_save_soora"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ListView
+            android:padding="20dp"
+            android:layout_marginTop="40sp"
+            android:id="@+id/id_list_record_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="5sp"
+            android:headerDividersEnabled="true"></ListView>
+</RelativeLayout>

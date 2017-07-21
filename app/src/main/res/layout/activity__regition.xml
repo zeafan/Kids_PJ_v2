@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layer_id_relotion"
+    android:background="@drawable/main_background"
+    tools:context="com.app.mohamedgomaa.kids_pj.Activity_Regition">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginBottom="30sp"
+
+            >
+            <ImageView
+                android:id="@+id/im_qaraan"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:onClick="AlQaran_Action"
+                android:layout_margin="5sp"
+                android:src="@drawable/relidion_item1"
+                />
+            <ImageView
+                android:padding="5dp"
+                android:id="@+id/im_zakr"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:src="@drawable/relidion_item2"
+                android:onClick="Zakr_Action"
+                />
+            </LinearLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:orientation="vertical"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="30sp"
+                >
+                <ImageView
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:id="@+id/im_anbyaa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:onClick="Anbyaa_Action"
+                    android:src="@drawable/relidion_item3"
+                    />
+                <ImageView
+                    android:padding="5dp"
+                    android:id="@+id/im_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="Test_Action"
+                    android:scaleType="fitXY"
+                    android:layout_margin="5sp"
+                    android:src="@drawable/relidion_item4"
+
+                    />
+                </LinearLayout>
+         <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5">
+                    <ImageView
+                        android:padding="5dp"
+                        android:id="@+id/id_religion_char"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="Math_Action"
+                        />
+                    </LinearLayout>
+</LinearLayout>
+    </RelativeLayout>
+
+

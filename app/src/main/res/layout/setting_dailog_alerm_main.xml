@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/setting_dailog"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+
+
+    <ImageView
+        android:id="@+id/d_id_sound"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        app:srcCompat="@drawable/audio"
+        android:layout_weight="1"
+        android:layout_margin="10sp"
+        />
+
+    <ImageView
+        android:id="@+id/d_id_about"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_weight="1"
+        android:layout_margin="1sp"
+        app:srcCompat="@drawable/about" />
+
+    <ImageView
+        android:id="@+id/d_id_rate"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_weight="1"
+        android:layout_marginRight="30sp"
+        app:srcCompat="@drawable/rate" />
+
+    <ImageView
+        android:id="@+id/d_id_msg"
+        android:layout_marginRight="20sp"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/msg" />
+
+</LinearLayout>

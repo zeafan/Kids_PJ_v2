@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="140sp"
+        android:layout_height="130sp"
+        android:orientation="vertical"
+        android:id="@+id/id_item_sora_background"
+        android:background="@drawable/items_sora_background1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp"
+            >
+
+            <ImageView
+                android:id="@+id/id_item_sora_save"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:src="@drawable/items_sora_save"
+                />
+
+            <TextView
+                android:id="@+id/id_item_sora_number"
+                android:layout_width="20sp"
+                android:layout_height="40sp"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="right"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:background="@drawable/items_sora_num" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginBottom="3sp"
+            android:layout_marginRight="10sp"
+            android:background="@drawable/items_sora_text_back"
+            >
+            <TextView
+                android:id="@+id/id_item_sora_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="الخلاص"
+                android:padding="2sp"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            >
+            <ImageView
+                android:id="@+id/id_item_sora_star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/items_sora_star_false"
+                 />
+
+            <ImageView
+                android:id="@+id/id_item_sora_star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/items_sora_star_false"
+                />
+
+            <ImageView
+                android:id="@+id/id_item_sora_star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/items_sora_star_false"
+
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

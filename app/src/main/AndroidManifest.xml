@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.mohamedgomaa.kids_pj">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="landscape"
+            android:theme="@style/NoBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Anbyaa_Stories.Test" />
+
+          <activity
+              android:name=".Main"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Arabic"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_English"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Computer"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Game"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Math"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Anbyaa_Stories.Activity_Regition_Anbyaa_story"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Qaraan.Activity_Regition_Qaraan"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Regition_Zakr"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Anbyaa_Stories.Activity_Regition_Anbyaa_videos"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Regition_Test"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Qaraan.Activity_Regition_Qaraan_Show"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Activity_Regition"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Anbyaa_Stories.Activity_Regition_Anbyaa"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+          <activity
+              android:name=".Anbyaa_Stories.Activity_Regition_Anbyaa_videos_show"
+              android:screenOrientation="landscape"
+              android:theme="@style/NoBar" />
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="22f5b8437a3321b56d8b1172b47789222083e38e" />
+    </application>
+
+</manifest>

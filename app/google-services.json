@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "630720103667",
+    "firebase_url": "https://myproject-a323f.firebaseio.com",
+    "project_id": "myproject-a323f",
+    "storage_bucket": "myproject-a323f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630720103667:android:56cebb7584e844d9",
+        "android_client_info": {
+          "package_name": "com.app.mohamedgomaa.kids_pj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630720103667-5jcqdsrpsk3ut6e8166qb6r7gd0l5b1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.mohamedgomaa.kids_pj",
+            "certificate_hash": "e5ef75001cb61d42294aacccfe05e25597206d59"
+          }
+        },
+        {
+          "client_id": "630720103667-0aklek978evrn81ucl7a080s708vqq8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBl57-a1_oE8u0sUZojIdZnX2aO465-7s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630720103667-0aklek978evrn81ucl7a080s708vqq8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

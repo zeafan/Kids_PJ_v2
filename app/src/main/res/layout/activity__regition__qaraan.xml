@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layer_id_relotion_qaraan"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_qaraan"
+    android:layout_height="match_parent"
+    tools:context=".Qaraan.Activity_Regition_Qaraan">
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/id_item_sora"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp"
+        android:scrollbars="horizontal"
+        android:verticalSpacing="5dp"
+        android:numColumns="auto_fit"
+        android:columnWidth="145sp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/Record_List"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:clickable="true"
+        android:background="@drawable/btn_record_list"
+        android:layout_marginLeft="60sp"
+        android:onClick="Setting_Record"
+       />
+    <Button
+        android:id="@+id/Return_Main"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:clickable="true"
+        android:background="@drawable/back_btn_action"
+        android:onClick="Return"
+        />
+</RelativeLayout>

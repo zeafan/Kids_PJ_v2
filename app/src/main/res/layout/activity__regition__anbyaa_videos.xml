@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Activity_Regition_Anbyaa_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_story_activity"
+    tools:context=".Anbyaa_Stories.Activity_Regition_Anbyaa_videos">
+<ImageView
+    android:layout_width="70sp"
+    android:layout_height="50sp"
+    android:src="@drawable/back_btn_action"
+    android:onClick="Back_Main"
+    />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="45sp"
+        android:layout_marginTop="45sp"
+        android:layout_marginRight="50sp"
+        android:layout_marginLeft="50sp"
+        android:orientation="horizontal"
+        android:splitMotionEvents="?attr/isLightTheme">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
