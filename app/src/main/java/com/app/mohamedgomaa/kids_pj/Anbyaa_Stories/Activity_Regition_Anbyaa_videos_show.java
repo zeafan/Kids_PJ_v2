@@ -4,7 +4,12 @@ import android.support.v4.view.ViewCompat;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.app.mohamedgomaa.kids_pj.CheckConnection_Internet;
 import com.app.mohamedgomaa.kids_pj.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -33,5 +38,12 @@ public class Activity_Regition_Anbyaa_videos_show extends YouTubeBaseActivity {
             }
         };
         youtubeV.initialize(getResources().getString(R.string.API_key),onInitializedListener);
+        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
+        AdView mAdView = (AdView) findViewById(R.id.adView_Activity_Anbyaa_Videos_Show);
+        if(new CheckConnection_Internet(Activity_Regition_Anbyaa_videos_show.this).IsConnection())
+        {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
     }
     }

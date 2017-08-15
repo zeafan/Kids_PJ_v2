@@ -32,7 +32,12 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.app.mohamedgomaa.kids_pj.Azkaar.Activity_Regition_Zakr;
+import com.app.mohamedgomaa.kids_pj.CheckConnection_Internet;
 import com.app.mohamedgomaa.kids_pj.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -87,6 +92,13 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
         addFont();
         change_Design();
         initImageSwitcher();
+        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
+        AdView mAdView = (AdView)findViewById(R.id.adView_Activity_qaraan_show);
+        if(new CheckConnection_Internet(Activity_Regition_Qaraan_Show.this).IsConnection())
+        {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
         my_list_Ayaas_sound.add(getMedia("sound/sooarl_s0.mp3"));
         my_list_Ayaas_Img.add(getDrawable("images/besm_allah.png"));
         list = new ArrayList<>();
@@ -456,7 +468,8 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
             public void onClick(View v) {
                 if (chech_Record) {
                     imageView.setImageResource(R.drawable.btn_record_stop);
-                    Ayaa_Sound.pause();
+                    Ayaa_Sound.stop();
+                    countDownTimer.cancel();
                     chech_Record = false;
                     if (checkPermission()) {
                         AudioSavePathInDevice =

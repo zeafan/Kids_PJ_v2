@@ -22,7 +22,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.mohamedgomaa.kids_pj.Activity_Regition;
+import com.app.mohamedgomaa.kids_pj.CheckConnection_Internet;
 import com.app.mohamedgomaa.kids_pj.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -46,7 +50,6 @@ public class Activity_Regition_Qaraan extends AppCompatActivity {
         Activity_Regition.check_1=false;
         db = new DatabaseHelper(this);
         ViewCompat.setLayoutDirection(findViewById(R.id.layer_id_relotion_qaraan), ViewCompat.LAYOUT_DIRECTION_LTR);
-
         File database = getApplicationContext().getDatabasePath(db.DBNAME);
         if (false == database.exists()) {
             db.getReadableDatabase();
@@ -58,6 +61,13 @@ public class Activity_Regition_Qaraan extends AppCompatActivity {
         gridView.setAdapter(adapterGridView);
         MediaPlayer m2=getMedia("sooar_main/sooarM_sorah.mp3");
         m2.start();
+        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
+        AdView mAdView = (AdView)findViewById(R.id.adView_Activity_qaraan_list);
+        if(new CheckConnection_Internet(Activity_Regition_Qaraan.this).IsConnection())
+        {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
     }
     public void Return(View view) {
 

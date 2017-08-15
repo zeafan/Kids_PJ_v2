@@ -2,6 +2,7 @@ package com.app.mohamedgomaa.kids_pj.Anbyaa_Stories;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.app.mohamedgomaa.kids_pj.CheckConnection_Internet;
 import com.app.mohamedgomaa.kids_pj.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +35,7 @@ import java.util.List;
 public class Activity_Regition_Anbyaa_videos extends AppCompatActivity {
     RecyclerView recyclerView;
    ProgressDialog build;
+    int num_check=0;
     List<item_video> _mylist=new ArrayList<>();
     final String url="https://zeafancom.000webhostapp.com/kids_religion_getAllmovies.php";
     @Override
@@ -47,8 +53,8 @@ public class Activity_Regition_Anbyaa_videos extends AppCompatActivity {
         if (new CheckConnection_Internet(this).IsConnection()) {
             build=new ProgressDialog(this);
             build.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            build.setMessage("أستنى ياحبيبى شويه بيحمل من النت");
-            build.setCancelable(false);
+            build.setMessage("جارى التحميل ..");
+            build.setCancelable(true);
             build.show();
             Singleton singleton = new Singleton(this);
             StringRequest StringReq = new StringRequest(Request.Method.POST,url, new Response.Listener<String>() {
@@ -64,6 +70,7 @@ public class Activity_Regition_Anbyaa_videos extends AppCompatActivity {
                         }
                         RecyleAdapter_videos recyleAdapterVideos =new RecyleAdapter_videos(_mylist,Activity_Regition_Anbyaa_videos.this);
                         build.dismiss();
+
                         recyclerView.setAdapter(recyleAdapterVideos);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -84,8 +91,21 @@ public class Activity_Regition_Anbyaa_videos extends AppCompatActivity {
             builder.setView(img);
             builder.setCancelable(true);
             builder.show();
+
+        }
+        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
+        AdView mAdView = (AdView) findViewById(R.id.adView_Activity_Anbyaa_Videos);
+        if(new CheckConnection_Internet(Activity_Regition_Anbyaa_videos.this).IsConnection())
+        {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        }
 
     public void Back_Main(View view) {
         startActivity(new Intent(Activity_Regition_Anbyaa_videos.this,Activity_Regition_Anbyaa.class));

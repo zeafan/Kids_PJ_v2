@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Activity_Regition_Anbyaa_story"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_story_activity"
     tools:context=".Anbyaa_Stories.Activity_Regition_Anbyaa_story">
     <ImageView
-        android:layout_width="70sp"
-        android:layout_height="50sp"
+        android:layout_width="100sp"
+        android:layout_height="80sp"
         android:src="@drawable/back_btn_action"
         android:onClick="Back_Main"
         />
@@ -24,5 +25,17 @@
         android:orientation="horizontal"
         android:splitMotionEvents="?attr/isLightTheme">
     </android.support.v7.widget.RecyclerView>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView_Activity_Anbyaa_Story2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id_Activity_Anbyaa_Story"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp"/>
 
 </RelativeLayout>

@@ -14,12 +14,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class Splash extends AppCompatActivity {
     AnimationDrawable animation_Boy, animationBus, animation_speak;
     ImageView imageBoy, image_Bus, Go_btn, image_wel;
     MediaPlayer m_btn, bus_alerm, bus_move, yay, welcame, go_audio;
     Animation boy_anim, bus_anim, action_btn, bus_anim2;
     boolean check_btn_press = false,check_go=true;
+    private AdView mAdView;
     Thread thread1,thread2;
     void initilazationUI() {
         image_Bus = (ImageView) findViewById(R.id.bus);
@@ -31,9 +36,13 @@ public class Splash extends AppCompatActivity {
         animation_Boy = (AnimationDrawable) imageBoy.getBackground();
         animationBus = (AnimationDrawable) image_Bus.getBackground();
         animation_speak = (AnimationDrawable) image_wel.getBackground();
-
+        mAdView = (AdView) findViewById(R.id.adView_splash);
+        if(new CheckConnection_Internet(Splash.this).IsConnection())
+        {
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+        }
         Go_btn = (ImageView) findViewById(R.id.go);
-
         m_btn = MediaPlayer.create(this, R.raw.fav_btn);
         bus_alerm = MediaPlayer.create(this, R.raw.car);
         bus_move = MediaPlayer.create(this, R.raw.bus_sound_3);
@@ -108,6 +117,7 @@ public class Splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
         ViewCompat.setLayoutDirection(findViewById(R.id.layer_id_splash), ViewCompat.LAYOUT_DIRECTION_LTR);
+        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
         initilazationUI();
         setAnimation();
     }
@@ -150,7 +160,7 @@ public class Splash extends AppCompatActivity {
                         super.run();
                         try {
                             sleep(3000);
-                            startActivity(new Intent(Splash.this, Main.class));
+                            startActivity(new Intent(Splash.this, Activity_Regition.class));
                             finish();
                         } catch (Exception E) {
                         }
@@ -165,5 +175,7 @@ public class Splash extends AppCompatActivity {
         check_go=false;
       //  thread2.stop();
         Action_Go();
+        Go_btn.setVisibility(View.INVISIBLE);
+
     }
 }
