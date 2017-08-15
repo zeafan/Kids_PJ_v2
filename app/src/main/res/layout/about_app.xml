@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cv_profile" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:background="#252833"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="هذا العمل لوجه الله "
+                android:textColor="#bbb"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="التعريف على صاحب التطبيق"
+                android:textColor="#f00"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="email : zeafan.job@gmail.com"
+                android:textColor="#fff"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="الأسم:محمد جمعة محمد زعفان"
+                android:textColor="#fff"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="العمل: مبرمج تطبيقات الأندرويد"
+                android:textColor="#fff"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="t:01128207969"
+                android:textColor="#fff"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="البلد :أبوالنمرس جيزة مصر"
+                android:textColor="#fff"
+                android:textDirection="rtl"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

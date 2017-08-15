@@ -22,8 +22,10 @@ import com.app.mohamedgomaa.kids_pj.Anbyaa_Stories.Activity_Regition_Anbyaa;
 import com.app.mohamedgomaa.kids_pj.Azkaar.Activity_Regition_Zakr;
 import com.app.mohamedgomaa.kids_pj.Qaraan.Activity_Regition_Qaraan;
 import com.app.mohamedgomaa.kids_pj.Qaraan.Activity_Regition_Qaraan_Show;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 public class Activity_Regition extends AppCompatActivity {
@@ -52,7 +54,7 @@ public class Activity_Regition extends AppCompatActivity {
             mAdView.loadAd(adRequest);
         }
     }
-
+    InterstitialAd mInterstitialAd;
     void initialize() {
         ViewCompat.setLayoutDirection(findViewById(R.id.layer_id_relotion), ViewCompat.LAYOUT_DIRECTION_LTR);
         choice = MediaPlayer.create(this, R.raw.choose_sound);
@@ -65,6 +67,21 @@ public class Activity_Regition extends AppCompatActivity {
         im_char.setBackgroundResource(R.drawable.item_motion_religion_char);
         anim_char = (AnimationDrawable) im_char.getBackground();
         anim_char.start();
+        MobileAds.initialize(getApplicationContext(),
+                "ca-app-pub-2377269014702707~1992291077");
+        AdRequest adRequest_inter = new AdRequest.Builder().build();
+        mInterstitialAd = new InterstitialAd(Activity_Regition.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-2377269014702707/4668749587");
+        mInterstitialAd.loadAd(adRequest_inter);
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdClosed() {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
     }
 
     void setAnim() {
@@ -179,7 +196,11 @@ public class Activity_Regition extends AppCompatActivity {
         about_act.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                View view1223=getLayoutInflater().inflate(R.layout.about_app,null);
+                AlertDialog.Builder Dialog=new AlertDialog.Builder(Activity_Regition.this);
+                Dialog.setView(view1223);
+                Dialog.setCancelable(true);
+                Dialog.show();
             }
         });
         rate_act.setOnClickListener(new View.OnClickListener() {
@@ -222,8 +243,14 @@ public class Activity_Regition extends AppCompatActivity {
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                System.exit(0);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+                else {
+                    finish();
+                    System.exit(0);
+                }
+
             }
         });
         btn_No.setOnClickListener(new View.OnClickListener() {
