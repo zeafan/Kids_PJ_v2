@@ -40,10 +40,10 @@ public class RecyleAdapter_story extends RecyclerView.Adapter<RecyleAdapter_stor
     void Initiazation_PBar()
     {
         progressDialog=new ProgressDialog(_context);
-        progressDialog.setMessage("ياحبيبى ثوانى وهينزل من النت");
+        progressDialog.setMessage("جارى التحميل .. ");
         progressDialog.setProgressStyle(progressDialog.STYLE_HORIZONTAL);
         progressDialog.setProgress(0);
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(true);
         progressDialog.setIndeterminate(true);
     }
     @Override
@@ -80,6 +80,12 @@ public class RecyleAdapter_story extends RecyclerView.Adapter<RecyleAdapter_stor
                         String Path = "https://zeafancom.000webhostapp.com/kids_story_pdf/file_" + String.valueOf(position) + ".pdf";
                         final Download_file download_file = new Download_file(_context, mkFolder("file_" + position + ".pdf"), position);
                         Initiazation_PBar();
+                        progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialog) {
+                                download_file.cancel(true);
+                            }
+                        });
                         download_file.execute(Path);
                     } else {
                         Toast toast=new Toast(_context);

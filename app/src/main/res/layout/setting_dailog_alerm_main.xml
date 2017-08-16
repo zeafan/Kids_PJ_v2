@@ -24,14 +24,6 @@
             app:srcCompat="@drawable/audio" />
 
         <ImageView
-            android:id="@+id/d_id_about"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_margin="10sp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/about" />
-
-        <ImageView
             android:id="@+id/d_id_rate"
             android:layout_width="100sp"
             android:layout_height="100sp"
