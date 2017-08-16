@@ -175,7 +175,6 @@ public class Activity_Regition extends AppCompatActivity {
         setting_dailog = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.setting_dailog_alerm_main, null);
         final ImageView sound_act = (ImageView) view.findViewById(R.id.d_id_sound);
-        ImageView about_act = (ImageView) view.findViewById(R.id.d_id_about);
         ImageView rate_act = (ImageView) view.findViewById(R.id.d_id_rate);
         ImageView msg_act = (ImageView) view.findViewById(R.id.d_id_msg);
         ImageView close = (ImageView) view.findViewById(R.id.d_id_close);
@@ -191,16 +190,6 @@ public class Activity_Regition extends AppCompatActivity {
                     music.start();
                     check_sound = false;
                 }
-            }
-        });
-        about_act.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                View view1223=getLayoutInflater().inflate(R.layout.about_app,null);
-                AlertDialog.Builder Dialog=new AlertDialog.Builder(Activity_Regition.this);
-                Dialog.setView(view1223);
-                Dialog.setCancelable(true);
-                Dialog.show();
             }
         });
         rate_act.setOnClickListener(new View.OnClickListener() {
