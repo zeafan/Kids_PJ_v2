@@ -1,139 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layer_id_relotion_zakr"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layer_id_relotion_zakr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.app.mohamedgomaa.kids_pj.Azkaar.Activity_Regition_Zakr">
 
 
     <HorizontalScrollView
-        android:layout_width="match_parent"
         android:id="@+id/view"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-     >
+        android:layout_alignParentTop="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/azkar_background"
             android:orientation="horizontal">
 
-            <RelativeLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="330sp"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/imageView13"
-                    android:layout_width="120sp"
-                    android:layout_height="200sp"
-                    android:onClick="Action_bed"
-                    app:srcCompat="@drawable/bed"
+                    android:layout_width="164dp"
+                    android:layout_height="269dp"
                     android:layout_alignTop="@+id/clothes_t"
                     android:layout_toLeftOf="@+id/clothes_t"
                     android:layout_toStartOf="@+id/clothes_t"
-                    android:layout_marginTop="19dp" />
+                    android:onClick="Action_bed"
+                    app:srcCompat="@drawable/bed"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/clothes_t"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintRight_toLeftOf="@+id/imageView15"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.652" />
 
                 <ImageView
                     android:id="@+id/clothes_t"
-                    android:layout_width="90sp"
-                    android:layout_height="160sp"
-                    android:onClick="Action_closet"
-                    app:srcCompat="@drawable/room_04_close"
-                    android:layout_marginRight="14dp"
-                    android:layout_marginEnd="14dp"
+                    android:layout_width="108dp"
+                    android:layout_height="240dp"
                     android:layout_alignTop="@+id/imageView15"
+                    android:layout_marginEnd="14dp"
                     android:layout_toLeftOf="@+id/imageView15"
                     android:layout_toStartOf="@+id/imageView15"
-                    android:layout_marginTop="25dp" />
+                    android:onClick="Action_closet"
+                    app:srcCompat="@drawable/room_04_close"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                    android:layout_marginBottom="27dp"
+                    android:layout_marginRight="74dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_bias="0.735" />
 
                 <ImageView
                     android:id="@+id/imageView15"
-                    android:layout_width="40sp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="307dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:onClick="Action_door_1"
                     app:srcCompat="@drawable/azkar_room_close"
-                    android:layout_marginBottom="27dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintVertical_bias="0.836"
+                    tools:layout_editor_absoluteY="325dp"
+                    tools:layout_editor_absoluteX="266dp" />
 
 
-            </RelativeLayout>
+            </android.support.constraint.ConstraintLayout>
 
             <RelativeLayout
                 android:layout_width="310sp"
                 android:layout_height="match_parent"
                 android:layout_weight="0">
+
                 <ImageView
                     android:id="@+id/door_2"
                     android:layout_width="45sp"
                     android:layout_height="wrap_content"
-                    android:onClick="Action_door_2"
-                    app:srcCompat="@drawable/azkar_room_close"
-                    android:layout_marginBottom="27dp"
                     android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_marginBottom="27dp"
+                    android:onClick="Action_door_2"
+                    app:srcCompat="@drawable/azkar_room_close" />
 
                 <ImageView
                     android:id="@+id/pool_water"
                     android:layout_width="80sp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/room2_water"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/door_2"
+                    android:layout_marginEnd="46dp"
+                    android:layout_marginRight="46dp"
                     android:layout_marginTop="24dp"
                     android:onClick="Action_water"
-                    android:layout_alignTop="@+id/door_2"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="46dp"
-                    android:layout_marginEnd="46dp" />
+                    app:srcCompat="@drawable/room2_water" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="480sp"
                 android:layout_height="match_parent"
-                android:layout_weight="0" >
+                android:layout_weight="0">
+
                 <ImageView
                     android:id="@+id/door_3"
                     android:layout_width="60sp"
                     android:layout_height="wrap_content"
-                    android:onClick="Action_door_3"
-                    app:srcCompat="@drawable/azkar_room_close"
-                    android:layout_marginBottom="27dp"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:layout_marginBottom="27dp"
                     android:layout_marginLeft="441dp"
-                    android:layout_marginStart="441dp" />
+                    android:layout_marginStart="441dp"
+                    android:onClick="Action_door_3"
+                    app:srcCompat="@drawable/azkar_room_close" />
 
                 <ImageView
                     android:id="@+id/goodmorgin_azkar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/room3_azkar"
-                    android:onClick="Action_goodMorgin"
-                    android:layout_marginRight="91dp"
-                    android:layout_marginEnd="91dp"
                     android:layout_above="@+id/door_3"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_marginEnd="91dp"
+                    android:layout_marginRight="91dp"
+                    android:onClick="Action_goodMorgin"
+                    app:srcCompat="@drawable/room3_azkar" />
 
                 <ImageView
                     android:id="@+id/foot_table"
                     android:layout_width="200sp"
                     android:layout_height="150sp"
+                    android:layout_alignBottom="@+id/door_3"
+                    android:layout_alignEnd="@+id/goodmorgin_azkar"
+                    android:layout_alignRight="@+id/goodmorgin_azkar"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginRight="85dp"
                     android:layout_weight="1"
                     android:onClick="foot_table"
-                    app:srcCompat="@drawable/foottable"
-                    android:layout_alignBottom="@+id/door_3"
-                    android:layout_alignRight="@+id/goodmorgin_azkar"
-                    android:layout_alignEnd="@+id/goodmorgin_azkar"
-                    android:layout_marginRight="85dp"
-                    android:layout_marginEnd="85dp"
-                    android:layout_marginBottom="14dp" />
+                    app:srcCompat="@drawable/foottable" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -145,62 +172,63 @@
                 <ImageView
                     android:id="@+id/car"
                     android:layout_width="200sp"
-                    android:onClick="Action_car"
                     android:layout_height="110sp"
-                    app:srcCompat="@drawable/car_close"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginStart="12dp" />
+                    android:layout_marginStart="12dp"
+                    android:onClick="Action_car"
+                    app:srcCompat="@drawable/car_close" />
 
                 <ImageView
                     android:id="@+id/imageView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/azaan"
+                    android:layout_above="@+id/musique"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginEnd="37dp"
                     android:layout_marginRight="37dp"
                     android:onClick="Action_Azaan"
-                    android:layout_marginEnd="37dp"
-                    android:layout_above="@+id/musique"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="26dp" />
+                    app:srcCompat="@drawable/azaan" />
 
                 <ImageView
                     android:id="@+id/musique"
                     android:layout_width="200sp"
                     android:layout_height="150sp"
-                    android:onClick="Action_Musique"
-                    app:srcCompat="@drawable/musique2"
-                    android:layout_marginBottom="80dp"
                     android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_marginBottom="80dp"
+                    android:onClick="Action_Musique"
+                    app:srcCompat="@drawable/musique2" />
 
                 <ImageView
                     android:id="@+id/deek"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/deek2"
-                    android:layout_marginLeft="29dp"
-                    android:onClick="Action_Deek"
-                    android:layout_marginStart="29dp"
                     android:layout_above="@+id/musique"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginStart="29dp"
+                    android:onClick="Action_Deek"
+                    app:srcCompat="@drawable/deek2" />
 
                 <ImageView
                     android:id="@+id/AlSlaam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hello_2"
-                    android:onClick="Hello"
-                    android:layout_marginBottom="22dp"
                     android:layout_alignBottom="@+id/musique"
+                    android:layout_marginBottom="22dp"
                     android:layout_toLeftOf="@+id/musique"
-                    android:layout_toStartOf="@+id/musique" />
+                    android:layout_toStartOf="@+id/musique"
+                    android:onClick="Hello"
+                    app:srcCompat="@drawable/hello_2" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="440sp"
                 android:layout_height="match_parent"
@@ -219,19 +247,20 @@
                     android:layout_width="100sp"
                     android:layout_height="200sp"
                     android:layout_alignParentBottom="true"
-                    android:onClick="Mosab"
                     android:layout_marginBottom="10sp"
+                    android:onClick="Mosab"
                     app:srcCompat="@drawable/azkar_17_img" />
 
                 <ImageView
                     android:id="@+id/azkar_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
                     android:onClick="Oooos"
-                    android:layout_height="wrap_content"
                     app:srcCompat="@drawable/azkar_boy_16_" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="400sp"
                 android:layout_height="match_parent"
@@ -239,11 +268,12 @@
 
                 <ImageView
                     android:id="@+id/azkar_18"
-                    android:onClick="azkar_18"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="azkar_18"
                     app:srcCompat="@drawable/azkar_18_img" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="360sp"
                 android:layout_height="match_parent"
@@ -251,25 +281,26 @@
 
                 <ImageView
                     android:id="@+id/azkar_20"
-                    android:onClick="Action_Azkaar_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/azkar_20_img"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="35dp"
                     android:layout_marginRight="35dp"
-                    android:layout_marginEnd="35dp" />
+                    android:onClick="Action_Azkaar_20"
+                    app:srcCompat="@drawable/azkar_20_img" />
 
                 <ImageView
                     android:id="@+id/azkar_19"
-                    android:onClick="Action_Azkaar_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/azkar_19_rain"
                     android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:onClick="Action_Azkaar_19"
+                    app:srcCompat="@drawable/azkar_19_rain" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="440sp"
                 android:layout_height="match_parent"
@@ -279,37 +310,37 @@
                     android:id="@+id/azkar_22"
                     android:layout_width="300sp"
                     android:layout_height="250sp"
-                    android:onClick="Action_Azkar_22"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/azkar_22_img"
                     android:layout_alignParentBottom="true"
-                    android:layout_toRightOf="@+id/azkar_21"
-                    android:layout_toEndOf="@+id/azkar_21"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginStart="20dp" />
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@+id/azkar_21"
+                    android:layout_toRightOf="@+id/azkar_21"
+                    android:layout_weight="1"
+                    android:onClick="Action_Azkar_22"
+                    app:srcCompat="@drawable/azkar_22_img" />
 
                 <ImageView
                     android:id="@+id/azkar_21"
                     android:layout_width="wrap_content"
                     android:layout_height="200sp"
-                    android:onClick="Action_Azkar21"
-                    app:srcCompat="@drawable/azkar_room_close2"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginBottom="52dp" />
+                    android:layout_marginBottom="52dp"
+                    android:onClick="Action_Azkar21"
+                    app:srcCompat="@drawable/azkar_room_close2" />
 
                 <ImageView
                     android:id="@+id/azkar_23"
                     android:layout_width="150sp"
                     android:layout_height="110sp"
-                    android:onClick="Action_Azkar_23"
-                    app:srcCompat="@drawable/room3_azkar"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="9dp"
                     android:layout_marginRight="9dp"
-                    android:layout_marginEnd="9dp" />
+                    android:onClick="Action_Azkar_23"
+                    app:srcCompat="@drawable/room3_azkar" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -319,12 +350,12 @@
 
                 <ImageView
                     android:id="@+id/azkar_24"
-                    android:onClick="Action_Azkar_24"
                     android:layout_width="150sp"
                     android:layout_height="300sp"
-                    app:srcCompat="@drawable/bed"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:onClick="Action_Azkar_24"
+                    app:srcCompat="@drawable/bed" />
             </RelativeLayout>
         </LinearLayout>
     </HorizontalScrollView>
@@ -333,35 +364,36 @@
         android:id="@+id/boy_speak_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/cloud_img"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="150sp"
+        android:visibility="gone"
 
         />
+
     <ImageView
         android:layout_width="110dp"
         android:layout_height="85dp"
-        android:src="@drawable/back_btn_action"
         android:onClick="Back_Main"
+        android:src="@drawable/back_btn_action"
         app:layout_constraintLeft_toLeftOf="parent" />
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView_Activity_Anbyaa_Story"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
         app:adSize="BANNER"
         app:adUnitId="@string/banner_ad_unit_id_activity_azkaar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </RelativeLayout>

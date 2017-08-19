@@ -19,17 +19,20 @@
         <ImageView
             android:id="@+id/img_story_id"
             android:layout_width="wrap_content"
-            android:layout_height="210sp"
+            android:layout_height="match_parent"
             android:src="@drawable/file_0"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5sp"
+            android:layout_marginBottom="70sp"
+
             />
         <LinearLayout
-            android:layout_width="170sp"
+            android:layout_width="190sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5sp"
+            android:layout_marginBottom="70sp"
             android:background="#64ffffff"
-            android:layout_height="210sp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/id_Linear_front"
             >
