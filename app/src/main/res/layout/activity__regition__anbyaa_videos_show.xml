@@ -15,7 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/back_story_activity2">
-    <com.google.android.youtube.player.YouTubePlayerView
+
+
+
+        <com.google.android.youtube.player.YouTubePlayerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/youtube_video"
@@ -35,4 +38,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="0dp"/>
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="120sp"
+        android:layout_height="80sp"
+        android:onClick="Back_To_Anbyaa"
+        android:src="@drawable/back_btn_action"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>

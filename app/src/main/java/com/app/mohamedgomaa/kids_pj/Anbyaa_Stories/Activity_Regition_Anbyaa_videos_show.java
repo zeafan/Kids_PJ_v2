@@ -1,10 +1,13 @@
 package com.app.mohamedgomaa.kids_pj.Anbyaa_Stories;
 
+import android.content.Intent;
 import android.support.v4.view.ViewCompat;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.app.mohamedgomaa.kids_pj.Activity_Regition;
 import com.app.mohamedgomaa.kids_pj.CheckConnection_Internet;
 import com.app.mohamedgomaa.kids_pj.R;
 import com.google.android.gms.ads.AdRequest;
@@ -46,4 +49,9 @@ public class Activity_Regition_Anbyaa_videos_show extends YouTubeBaseActivity {
             mAdView.loadAd(adRequest);
         }
     }
+
+    public void Back_To_Anbyaa(View view) {
+        startActivity(new Intent(this, Activity_Regition_Anbyaa.class));
+        finish();
     }
+}
