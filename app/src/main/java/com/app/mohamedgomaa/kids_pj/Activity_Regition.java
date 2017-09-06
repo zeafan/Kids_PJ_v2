@@ -53,6 +53,7 @@ public class Activity_Regition extends AppCompatActivity {
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
         }
+
     }
     InterstitialAd mInterstitialAd;
     void initialize() {
@@ -76,10 +77,9 @@ public class Activity_Regition extends AppCompatActivity {
         mInterstitialAd.setAdListener(new AdListener(){
             @Override
             public void onAdClosed() {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
             }
         });
     }
@@ -196,7 +196,7 @@ public class Activity_Regition extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent evaluate = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://play.google.com/store/apps/details?id=com.app.mohamedgomaa.kids_project"));
+                        Uri.parse("https://play.google.com/store/apps/details?id=com.app.mohamedgomaa.kids_pj"));
                 startActivity(evaluate);
             }
         });

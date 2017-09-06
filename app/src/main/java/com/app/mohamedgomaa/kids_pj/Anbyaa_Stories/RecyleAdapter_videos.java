@@ -2,6 +2,7 @@ package com.app.mohamedgomaa.kids_pj.Anbyaa_Stories;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,10 @@ List<item_video> _myList=new ArrayList<>();
             public void onClick(View v) {
                 Intent intent=new Intent(_context.getApplicationContext(),Activity_Regition_Anbyaa_videos_show.class);
                 intent.putExtra("id_video",_myList.get(position).video_path);
+                MediaPlayer _click=MediaPlayer.create(_context,R.raw.shoes);
+                _click.start();
                 _context.startActivity(intent);
+
             }
         });
     }

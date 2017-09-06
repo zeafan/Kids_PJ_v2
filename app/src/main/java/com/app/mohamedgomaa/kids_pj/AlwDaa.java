@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.MediaController;
@@ -38,6 +39,11 @@ VideoView VW;
 
     @Override
     public void onBackPressed() {
+        startActivity(new Intent(AlwDaa.this,Activity_Regition.class));
+        finish();
+    }
+
+    public void Back(View view) {
         startActivity(new Intent(AlwDaa.this,Activity_Regition.class));
         finish();
     }

@@ -2,6 +2,7 @@ package com.app.mohamedgomaa.kids_pj.Anbyaa_Stories;
 
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class Activity_Regition_Anbyaa extends AppCompatActivity {
 ImageView img_v,Img_s;
     Animation anim1,Anim2;
     private AdView mAdView;
+    MediaPlayer _click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ ImageView img_v,Img_s;
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.
                 FLAG_FULLSCREEN);
         setContentView(R.layout.activity__regition__anbyaa);
+        _click=MediaPlayer.create(this,R.raw.shoes);
         ViewCompat.setLayoutDirection(findViewById(R.id.layer_id_relotion_anbyaa), ViewCompat.LAYOUT_DIRECTION_LTR);
         anim1= AnimationUtils.loadAnimation(this,R.anim.translate_story_img);
         Anim2= AnimationUtils.loadAnimation(this,R.anim.translate_video_img);
@@ -45,12 +48,15 @@ ImageView img_v,Img_s;
             mAdView.loadAd(adRequest);
         }
     }
+
     public void Story_list(View view) {
         startActivity(new Intent(Activity_Regition_Anbyaa.this,Activity_Regition_Anbyaa_story.class));
+        _click.start();
     }
 
     public void Video_list(View view) {
         startActivity(new Intent(Activity_Regition_Anbyaa.this,Activity_Regition_Anbyaa_videos.class));
+        _click.start();
     }
 
     @Override
@@ -59,7 +65,7 @@ ImageView img_v,Img_s;
     }
 
     public void Back_Main(View view) {
-
+        _click.start();
         startActivity(new Intent(this, Activity_Regition.class));
         finish();
     }

@@ -1,10 +1,12 @@
 package com.app.mohamedgomaa.kids_pj.Qaraan;
 
+import java.io.Serializable;
+
 /**
  * Created by Mohamed Gooma on 6/24/2017.
  */
 
-public class Activity_Regition_Qaraan_items {
+public class Activity_Regition_Qaraan_items implements Serializable {
     int id,Id_img,num_ayaa,num_views,soora_saved;
     String name_Soora;
 

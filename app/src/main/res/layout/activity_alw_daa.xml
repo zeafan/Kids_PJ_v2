@@ -24,4 +24,14 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id_Activity_Alwdaa">
     </com.google.android.gms.ads.AdView>
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/videoView"
+        android:onClick="Back"
+        ads:srcCompat="@drawable/items_sora_show_back" />
 </RelativeLayout>

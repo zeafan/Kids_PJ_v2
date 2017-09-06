@@ -92,10 +92,9 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
         addFont();
         change_Design();
         initImageSwitcher();
-        MobileAds.initialize(this,getResources().getString(R.string.ADMOB_APP_ID));
-        AdView mAdView = (AdView)findViewById(R.id.adView_Activity_qaraan_show);
-        if(new CheckConnection_Internet(Activity_Regition_Qaraan_Show.this).IsConnection())
-        {
+        MobileAds.initialize(this, getResources().getString(R.string.ADMOB_APP_ID));
+        AdView mAdView = (AdView) findViewById(R.id.adView_Activity_qaraan_show);
+        if (new CheckConnection_Internet(Activity_Regition_Qaraan_Show.this).IsConnection()) {
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
         }
@@ -112,8 +111,7 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
         Ayaa_Sound.start();
         Img_Show_Ayaa.setImageDrawable(my_list_Ayaas_Img.get(0));
         num_views++;
-        switch (num_views)
-        {
+        switch (num_views) {
             case 1:
                 createToast(1);
                 break;
@@ -127,12 +125,13 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
         db.updata_numView(num_views, id);
         Count();
     }
+
     void createToast(int i) {
-        ImageView imageView=new ImageView(this);
-        imageView.setImageResource(getResources().getIdentifier("star"+String.valueOf(i),"drawable",getPackageName()));
+        ImageView imageView = new ImageView(this);
+        imageView.setImageResource(getResources().getIdentifier("star" + String.valueOf(i), "drawable", getPackageName()));
         Toast toast = new Toast(Activity_Regition_Qaraan_Show.this);
         toast.setView(imageView);
-        toast.setGravity(Gravity.TOP,0,0);
+        toast.setGravity(Gravity.TOP, 0, 0);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.show();
     }
@@ -159,13 +158,15 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
     boolean check_star = true;
     boolean check_Reload_btn = true;
     CountDownTimer countDownTimer;
+
     void Count() {
-         countDownTimer=new CountDownTimer(my_list_Ayaas_sound.get(i).getDuration(), my_list_Ayaas_sound.get(i).getDuration()) {
+        countDownTimer = new CountDownTimer(my_list_Ayaas_sound.get(i).getDuration(), my_list_Ayaas_sound.get(i).getDuration() - 20) {
             @Override
             public void onTick(long millisUntilFinished) {
                 if (check_star) {
                     Ayaa_Sound = my_list_Ayaas_sound.get(i);
-                    if (Ayaa_Sound != null) {
+                    if (Ayaa_Sound != null)
+                    {
                         if (!check_Sound) {
                             Ayaa_Sound.setVolume(0, 0);
                         }
@@ -197,11 +198,11 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
                         if (Soora_saved == 0) {
                             final AlertDialog.Builder alerm_Ayaa_Save = new AlertDialog.Builder(Activity_Regition_Qaraan_Show.this);
                             View view_Saved = getLayoutInflater().inflate(R.layout.dailog_alerm_saved_soora, null);
-                            Button btn_yes=(Button)view_Saved.findViewById(R.id.id_yse);
-                            Button btn_No=(Button)view_Saved.findViewById(R.id.btn_No);
-                            Button close=(Button)view_Saved.findViewById(R.id.close);
+                            Button btn_yes = (Button) view_Saved.findViewById(R.id.id_yse);
+                            Button btn_No = (Button) view_Saved.findViewById(R.id.btn_No);
+                            Button close = (Button) view_Saved.findViewById(R.id.close);
                             alerm_Ayaa_Save.setView(view_Saved);
-                            final AlertDialog ad= alerm_Ayaa_Save.show();
+                            final AlertDialog ad = alerm_Ayaa_Save.show();
                             btn_yes.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -218,6 +219,7 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
                                             toast.show();
                                             mediaPlayer123.start();
                                         }
+
                                         @Override
                                         public void onFinish() {
                                             startActivity(new Intent(Activity_Regition_Qaraan_Show.this, Activity_Regition_Qaraan.class));
@@ -351,12 +353,13 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
     }
 
     void getDataFromIntent() {
-        id = getIntent().getExtras().getInt("id");
-        id_img = getIntent().getExtras().getInt("id_img");
-        num_Ayaa = getIntent().getExtras().getInt("num_ayaa");
-        name_Soora = getIntent().getExtras().getString("name_soora");
-        num_views = getIntent().getExtras().getInt("num_views");
-        Soora_saved = getIntent().getExtras().getInt("Soora_saved");
+        Activity_Regition_Qaraan_items my_item = (Activity_Regition_Qaraan_items) getIntent().getSerializableExtra("class1");
+        id = my_item.id;
+        id_img = my_item.Id_img;
+        num_Ayaa = my_item.num_ayaa;
+        name_Soora = my_item.name_Soora;
+        num_views = my_item.num_views;
+        Soora_saved = my_item.soora_saved;
     }
 
     void init() {
@@ -450,13 +453,13 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
         Record_AlermD = new AlertDialog.Builder(this);
         View view_record = getLayoutInflater().inflate(R.layout.setting_dailog_alerm_record, null);
         final ImageView imageView = (ImageView) view_record.findViewById(R.id.id_record_dialog);
-        ImageView image_cloase=(ImageView)view_record.findViewById(R.id.close_record_Dailog);
-        final LottieAnimationView animationView = (LottieAnimationView)view_record.findViewById(R.id.animation_view);
+        ImageView image_cloase = (ImageView) view_record.findViewById(R.id.close_record_Dailog);
+        final LottieAnimationView animationView = (LottieAnimationView) view_record.findViewById(R.id.animation_view);
         animationView.setAnimation("equal.json");
         animationView.loop(true);
         Record_AlermD.setView(view_record);
         Record_AlermD.setCancelable(false);
-        final AlertDialog ad=Record_AlermD.show();
+        final AlertDialog ad = Record_AlermD.show();
         image_cloase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -481,8 +484,6 @@ public class Activity_Regition_Qaraan_Show extends AppCompatActivity {
                             mediaRecorder.prepare();
                             animationView.playAnimation();
                             mediaRecorder.start();
-                            animationView.playAnimation();
-
                         } catch (IllegalStateException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();

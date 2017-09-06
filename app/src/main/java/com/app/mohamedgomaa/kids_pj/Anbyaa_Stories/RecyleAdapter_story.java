@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.PowerManager;
@@ -75,6 +76,8 @@ public class RecyleAdapter_story extends RecyclerView.Adapter<RecyleAdapter_stor
         holder.Parent_Linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MediaPlayer _click=MediaPlayer.create(_context,R.raw.shoes);
+                _click.start();
                 if(_myList.get(position)._downlod==0) {
                     if (new CheckConnection_Internet(_context).IsConnection()) {
                         String Path = "https://zeafancom.000webhostapp.com/kids_story_pdf/file_" + String.valueOf(position) + ".pdf";
@@ -96,13 +99,22 @@ public class RecyleAdapter_story extends RecyclerView.Adapter<RecyleAdapter_stor
                         toast.show();                      }
                 }
                 else if(_myList.get(position)._downlod==1) {
+
                     File file = mkFolder("file_" + position + ".pdf");
                     if (file.exists()) {
+                        try {
                     Uri path = Uri.fromFile(file);
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setDataAndType(path, "application/pdf");
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         _context.startActivity(intent);
+                    }catch (Exception e)
+                        {
+                            Toast.makeText(_context, "يجب تحميل برنامج pdf reader", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(android.content.Intent.ACTION_VIEW,
+                                    Uri.parse("https://play.google.com/store/apps/details?id=com.adobe.reader"));
+                            _context.startActivity(i);
+                        }
                     }
                     else
                     {

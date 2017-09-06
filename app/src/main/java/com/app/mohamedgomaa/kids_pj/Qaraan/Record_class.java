@@ -80,7 +80,6 @@ import java.util.Random;
                             Toast.makeText(_con, e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                         mediaPlayer.start();
-
                     } else {
                         check_Play = true;
                         btn_Play.setBackgroundResource(android.R.drawable.ic_media_pause);

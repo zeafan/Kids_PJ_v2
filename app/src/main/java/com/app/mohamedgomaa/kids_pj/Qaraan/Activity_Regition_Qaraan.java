@@ -170,8 +170,9 @@ public class Activity_Regition_Qaraan extends AppCompatActivity {
                     Soora_star3.setImageResource(R.drawable.items_sora_star_false);
 
             }
+            final Activity_Regition_Qaraan_items My_class=myItems.get(position);
             final int id = myItems.get(position).id;
-            final int id_img = myItems.get(position).Id_img;
+          //  final int id_img = myItems.get(position).Id_img;
             item_backG.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -187,12 +188,7 @@ public class Activity_Regition_Qaraan extends AppCompatActivity {
                     }
                    final MediaPlayer m2=m;
                     Intent intent = new Intent(Activity_Regition_Qaraan.this, Activity_Regition_Qaraan_Show.class);
-                    intent.putExtra("id", id);
-                    intent.putExtra("id_img", id_img);
-                    intent.putExtra("name_soora", name_Sora);
-                    intent.putExtra("num_ayaa", num_ayaa);
-                    intent.putExtra("Soora_saved",num_saved);
-                    intent.putExtra("num_views", num_views);
+                    intent.putExtra("class1",My_class);
                             m2.start();
                     startActivity(intent);
                     finish();
